@@ -21,3 +21,5 @@ function Transformable:move(x, y)
     self.position.x = self.position.x + x
     self.position.y = self.position.y + y
 end
+
+return Transformable
