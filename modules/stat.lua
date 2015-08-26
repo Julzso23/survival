@@ -19,7 +19,7 @@ function Stat:getValue()
 end
 
 function Stat:add(value)
-    self.value + self.value + value
+    self.value = self.value + value
     self:checkLimits()
 end
 
