@@ -10,7 +10,7 @@ function Cursor:initialize(gridsize)
 end
 
 function Cursor:update(x, y)
-    self:setPosition(x, y)
+    self:setPosition(x - x % self.size, y - y % self.size)
 end
 
 function Cursor:draw()
