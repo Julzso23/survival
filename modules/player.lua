@@ -8,6 +8,9 @@ local Stat = require('modules.stat')
 
 local Player = class('Player', Transformable)
 
+Player.hungerDecay = 0.01
+Player.thirstDecay = 0.02
+
 function Player:initialize(x, y)
     Transformable.initialize(self)
 
@@ -17,6 +20,11 @@ function Player:initialize(x, y)
     self.inventory = Inventory:new(64)
 
     self:setPosition(x, y)
+end
+
+function Player:update(dt)
+    self.hunger:add(-self.hungerDecay * dt)
+    self.thirst:add(-self.thirstDecay * dt)
 end
 
 return Player
