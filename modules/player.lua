@@ -8,8 +8,8 @@ local Stat = require('modules.stat')
 
 local Player = class('Player', Transformable)
 
-Player.hungerDecay = 0.01
-Player.thirstDecay = 0.02
+Player.hungerDecay = 0.04
+Player.thirstDecay = 0.06
 
 function Player:initialize(x, y)
     Transformable.initialize(self)
