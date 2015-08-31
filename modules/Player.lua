@@ -1,10 +1,8 @@
 local class = require('lib.middleclass')
 
-local Transformable = require('modules.transformable')
-
-local Inventory = require('modules.inventory')
-
-local Stat = require('modules.stat')
+local Transformable = require('modules.Transformable')
+local Inventory = require('modules.Inventory')
+local Stat = require('modules.Stat')
 
 local Player = class('Player', Transformable)
 
