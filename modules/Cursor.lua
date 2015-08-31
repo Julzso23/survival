@@ -1,12 +1,12 @@
 local class = require('lib.middleclass')
 
-local Transformable = require('modules.transformable')
+local Transformable = require('modules.Transformable')
 
 local Cursor = class('Cursor', Transformable)
 
-function Cursor:initialize(gridsize)
+function Cursor:initialize(gridSize)
     Transformable.initialize(self)
-    self.size = gridsize
+    self.size = gridSize
 end
 
 function Cursor:update(x, y)

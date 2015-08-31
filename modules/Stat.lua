@@ -27,6 +27,7 @@ function Stat:checkLimits()
     if self.value > self.limits.max then
         self.value = self.limits.max
     end
+    
     if self.value < self.limits.min then
         self.value = self.limits.min
     end
