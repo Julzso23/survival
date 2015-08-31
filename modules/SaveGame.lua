@@ -13,12 +13,14 @@ function SaveGame.save(fileName)
     if not love.filesystem.exists('saves') then
         love.filesystem.createDirectory('saves')
     end
+    
     return love.filesystem.write('saves/' .. fileName .. '.jsf', msg.pack(data))
 end
 
 function SaveGame.load(fileName)
     if love.filesystem.exists('saves/' .. fileName .. '.jsf') then
         local data = msg.unpack(love.filesystem.read('saves/' .. fileName .. '.jsf'))
+
         player.health:setValue(data.player.health)
         player.hunger:setValue(data.player.hunger)
         player.thirst:setValue(data.player.thirst)
