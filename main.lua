@@ -1,11 +1,3 @@
-function love.load(args)
-    
-end
-
-function love.update(dt)
-    
-end
-
-function love.draw()
-    
+if love.filesystem.exists('test/main.lua') then
+    require('test.main')
 end
