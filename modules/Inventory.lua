@@ -10,6 +10,9 @@ end
 function Inventory:addItem(item)
     if #self.items < self.size then
         table.insert(self.items, item)
+        return true
+    else
+        return false
     end
 end
 
