@@ -4,8 +4,8 @@ local Tile = require('modules.Tile')
 
 local Grass = class('Grass', Tile)
 
-function Grass:initialize(gridSize)
-    Tile.initialize(self, gridSize)
+function Grass:initialize(gridSize, x, y)
+    Tile.initialize(self, gridSize, x, y)
 end
 
 function Grass:update(dt)

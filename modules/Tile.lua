@@ -4,9 +4,10 @@ local Transformable = require('modules.Transformable')
 
 local Tile = class('Tile', Transformable)
 
-function Tile:initialize(gridSize)
+function Tile:initialize(gridSize, x, y)
     Transformable.initialize(self)
     self.size = gridSize
+    self:setPosition(x, y)
 end
 
 function Tile:update(dt)
