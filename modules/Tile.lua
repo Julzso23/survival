@@ -16,4 +16,8 @@ end
 function Tile:draw()
 end
 
+function Tile:getDrop()
+    return nil
+end
+
 return Tile

@@ -1,6 +1,7 @@
 local class = require('lib.middleclass')
 
 local Tile = require('modules.Tile')
+local WheatItem = require('modules.items.Wheat')
 
 local Wheat = class('Wheat', Tile)
 
@@ -27,6 +28,10 @@ function Wheat:draw()
 
     love.graphics.setColor(255, 0, 0, 255)
     love.graphics.rectangle('fill', self:getPosition().x, self:getPosition().y + self.size / 2 - 5, self.size * (self.timer / self.growTime), 10)
+end
+
+function Wheat:getDrop()
+    return WheatItem
 end
 
 return Wheat
