@@ -57,7 +57,7 @@ function World:removeTile(x, y)
         local drop = self.tiles[id]:getDrop()
         if drop then
             if not self.player.inventory:addItem(drop:new()) then
-                table.insert(self.items, drop:new())
+                table.insert(self.items, drop:new(self.player:getPosition().x, self.player:getPosition().y))
             end
         end
         table.remove(self.tiles, id)

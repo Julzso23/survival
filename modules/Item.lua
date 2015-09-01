@@ -4,8 +4,11 @@ local Transformable = require('modules.Transformable')
 
 local Item = class('Item', Transformable)
 
-function Item:initialize()
+function Item:initialize(x, y)
     Transformable.initialize(self)
+    if x and y then
+        self:setPosition(x, y)
+    end
 end
 
 function Item:update(dt)

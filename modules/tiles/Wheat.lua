@@ -31,7 +31,11 @@ function Wheat:draw()
 end
 
 function Wheat:getDrop()
-    return WheatItem
+    if self.grown then
+        return WheatItem
+    else
+        return nil
+    end
 end
 
 return Wheat
