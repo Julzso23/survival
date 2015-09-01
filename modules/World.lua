@@ -7,6 +7,7 @@ local World = class('World')
 function World:initialize(gridSize)
     self.gridSize = gridSize or 64
     self.tiles = {}
+    self.items = {}
     self.player = Player:new(32, 32)
 end
 
@@ -16,10 +17,18 @@ function World:update(dt)
     for k, v in pairs(self.tiles) do
         v:update(dt)
     end
+
+    for k, v in pairs(self.items) do
+        v:update(dt)
+    end
 end
 
 function World:draw()
     for k, v in pairs(self.tiles) do
+        v:draw()
+    end
+
+    for k, v in pairs(self.items) do
         v:draw()
     end
 
@@ -45,9 +54,11 @@ end
 function World:removeTile(x, y)
     local exists, id = self:hasTile(x, y)
     if exists then
-        local drop = self.tiles:getDrop()
+        local drop = self.tiles[id]:getDrop()
         if drop then
-            self.player.inventory:addItem(drop)
+            if not self.player.inventory:addItem(drop:new()) then
+                table.insert(self.items, drop:new())
+            end
         end
         table.remove(self.tiles, id)
     end
