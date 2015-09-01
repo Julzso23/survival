@@ -25,4 +25,9 @@ function Player:update(dt)
     self.thirst:add(-self.thirstDecay * dt)
 end
 
+function Player:draw()
+    love.graphics.setColor(255, 255, 255, 255)
+    love.graphics.rectangle('fill', self:getPosition().x - 32, self:getPosition().y - 32, 64, 64)
+end
+
 return Player
